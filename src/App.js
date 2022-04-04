@@ -1,5 +1,7 @@
+import { Title } from "./styles/styles";
+
 const App = () => {
-  return <div>Hello world</div>;
+  return <Title>Hello world</Title>;
 };
 
 export default App;
