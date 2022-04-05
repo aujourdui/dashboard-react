@@ -25,6 +25,9 @@ export const MainContainer = styled.div`
   height: 100vh;
   overflow: hidden;
   padding-left: ${(props) => (props.close ? 0 : "16rem")};
+  @media (max-width: 1280px) {
+    padding-left: 0;
+  }
 `;
 
 export const MenuIconContainer = styled.div`
