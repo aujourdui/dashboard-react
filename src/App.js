@@ -1,5 +1,3 @@
-// import MenuIcon from "@mui/icons-material/Menu";
-
 import {
   RelativeContainer,
   SidebarContainer,
@@ -7,7 +5,8 @@ import {
   MenuIconContainer,
   CustomMenuIcon,
 } from "./styles/styles";
-// import axios from "axios";
+
+import Dashboard from "./Dashboard";
 
 const App = () => {
   return (
@@ -18,6 +17,9 @@ const App = () => {
           <MenuIconContainer>
             <CustomMenuIcon />
           </MenuIconContainer>
+          <div>
+            <Dashboard />
+          </div>
         </MainContainer>
       </RelativeContainer>
     </>
@@ -25,12 +27,3 @@ const App = () => {
 };
 
 export default App;
-
-{
-  /* 
-<RelativeContainer>
-<SidebarContainer>Sidebar</SidebarContainer>
-<MainContainer></MainContainer>
-<MenuIconContainer></MenuIconContainer>
-</RelativeContainer> */
-}
