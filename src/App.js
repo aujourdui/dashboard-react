@@ -5,6 +5,7 @@ import {
   SidebarContainer,
   MainContainer,
   MenuIconContainer,
+  MobileContainer,
   CustomMenuIcon,
 } from "./styles/styles";
 
@@ -22,12 +23,15 @@ const App = () => {
       <RelativeContainer>
         {show && <SidebarContainer>Sidebar</SidebarContainer>}
         {show ? (
-          <MainContainer>
-            <MenuIconContainer>
-              <CustomMenuIcon onClick={toggleSidebar} />
-            </MenuIconContainer>
-            <Dashboard />
-          </MainContainer>
+          <>
+            <MobileContainer onClick={toggleSidebar}></MobileContainer>
+            <MainContainer>
+              <MenuIconContainer>
+                <CustomMenuIcon onClick={toggleSidebar} />
+              </MenuIconContainer>
+              <Dashboard />
+            </MainContainer>
+          </>
         ) : (
           <MainContainer close>
             <MenuIconContainer>
