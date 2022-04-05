@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import {
   RelativeContainer,
   SidebarContainer,
@@ -9,17 +11,21 @@ import {
 import Dashboard from "./Dashboard";
 
 const App = () => {
+  const [show, setShow] = useState(true);
+
+  const toggleSidebar = () => {
+    setShow(!show);
+  };
+
   return (
     <>
       <RelativeContainer>
-        <SidebarContainer>Sidebar</SidebarContainer>
+        {show && <SidebarContainer>Sidebar</SidebarContainer>}
         <MainContainer>
           <MenuIconContainer>
-            <CustomMenuIcon />
+            <CustomMenuIcon onClick={toggleSidebar} />
           </MenuIconContainer>
-          <div>
-            <Dashboard />
-          </div>
+          <Dashboard />
         </MainContainer>
       </RelativeContainer>
     </>
