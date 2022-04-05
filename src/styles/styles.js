@@ -24,7 +24,7 @@ export const MainContainer = styled.div`
   background-color: #f3f4f6;
   height: 100vh;
   overflow: hidden;
-  padding-left: 16rem;
+  padding-left: ${(props) => (props.close ? 0 : "16rem")};
 `;
 
 export const MenuIconContainer = styled.div`

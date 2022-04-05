@@ -21,12 +21,21 @@ const App = () => {
     <>
       <RelativeContainer>
         {show && <SidebarContainer>Sidebar</SidebarContainer>}
-        <MainContainer>
-          <MenuIconContainer>
-            <CustomMenuIcon onClick={toggleSidebar} />
-          </MenuIconContainer>
-          <Dashboard />
-        </MainContainer>
+        {show ? (
+          <MainContainer>
+            <MenuIconContainer>
+              <CustomMenuIcon onClick={toggleSidebar} />
+            </MenuIconContainer>
+            <Dashboard />
+          </MainContainer>
+        ) : (
+          <MainContainer close>
+            <MenuIconContainer>
+              <CustomMenuIcon onClick={toggleSidebar} />
+            </MenuIconContainer>
+            <Dashboard />
+          </MainContainer>
+        )}
       </RelativeContainer>
     </>
   );
