@@ -1,7 +1,8 @@
 import React from "react";
+import { MainContentsContainer } from "../styles/styles";
 
 const UserList = () => {
-  return <div>UserList</div>;
+  return <MainContentsContainer>UserList</MainContentsContainer>;
 };
 
 export default UserList;

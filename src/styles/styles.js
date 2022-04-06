@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import MenuIcon from "@mui/icons-material/Menu";
+import { Link } from "react-router-dom";
 
 export const RelativeContainer = styled.div`
   position: relative;
@@ -80,14 +81,15 @@ export const AvatarImage = styled.img`
   cursor: pointer;
 `;
 
-export const LogoContainerWrapper = styled.div`
+export const LogoLinkWrapper = styled.div`
   padding: 1rem;
 `;
 
-export const LogoContainer = styled.div`
+export const LogoLink = styled(Link)`
   font-weight: bold;
   font-size: 1.125rem;
   line-height: 1.75rem;
+  text-decoration: none;
   color: rgb(37 99 235);
 `;
 
@@ -99,9 +101,11 @@ export const ListSidebar = styled.li`
   margin-bottom: 0.25rem;
   list-style: none;
 `;
-export const LinkItem = styled.a`
+export const LinkItem = styled(Link)`
   display: block;
   padding: 0.5rem;
+  text-decoration: none;
+  color: black;
   border-radius: 0.125rem;
   &:hover {
     color: white;
@@ -111,6 +115,10 @@ export const LinkItem = styled.a`
 
 export const SidebarListContainer = styled.div`
   margin-top: 2rem;
+`;
+
+export const MainContentsContainer = styled.div`
+  padding-left: 1rem;
 `;
 
 // export const ItemName = styled.span``;
