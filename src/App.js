@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { CSSTransition } from "react-transition-group";
 
 import {
   RelativeContainer,
@@ -21,7 +22,16 @@ const App = () => {
   return (
     <>
       <RelativeContainer>
-        {show && <SidebarContainer>Sidebar</SidebarContainer>}
+        <CSSTransition
+          in={show}
+          timeout={200}
+          classNames={"fade"}
+          unmountOnExit
+        >
+          <SidebarContainer>
+            <p>Sidebar</p>
+          </SidebarContainer>
+        </CSSTransition>
         {show ? (
           <>
             <MobileContainer onClick={toggleSidebar}></MobileContainer>

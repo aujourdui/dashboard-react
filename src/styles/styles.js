@@ -18,15 +18,18 @@ export const SidebarContainer = styled.div`
   height: 100vh;
   background-color: white;
   z-index: 20;
+  transition: 0.4s ease-in;
 `;
 
 export const MainContainer = styled.div`
   background-color: #f3f4f6;
   height: 100vh;
   overflow: hidden;
+  transition: 0.4s ease-in;
   padding-left: ${(props) => (props.close ? 0 : "16rem")};
   @media (max-width: 64rem) {
     padding-left: 0;
+    transition: 0.4s ease-in;
   }
 `;
 
@@ -36,6 +39,7 @@ export const MenuIconContainer = styled.div`
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   margin: 1rem;
   padding: 1rem;
+  transition: 0.4s ease-in;
 `;
 
 export const MobileContainer = styled.div`
@@ -55,4 +59,5 @@ export const MobileContainer = styled.div`
 export const CustomMenuIcon = styled(MenuIcon)`
   color: #4b5563;
   cursor: pointer;
+  transition: 0.4s ease-in;
 `;
