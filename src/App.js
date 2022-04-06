@@ -5,12 +5,15 @@ import {
   RelativeContainer,
   SidebarContainer,
   MainContainer,
+  TabContainer,
   MenuIconContainer,
   MobileContainer,
   CustomMenuIcon,
 } from "./styles/styles";
 
 import Dashboard from "./Dashboard";
+import DropdownMenu from "./components/DropdownMenu";
+import Sidebar from "./components/Sidebar";
 
 const App = () => {
   const [show, setShow] = useState(window.innerWidth >= 1280 ? true : false);
@@ -24,24 +27,30 @@ const App = () => {
       <RelativeContainer>
         {show && (
           <SidebarContainer>
-            <p>Sidebar</p>
+            <Sidebar />
           </SidebarContainer>
         )}
         {show ? (
           <>
             <MobileContainer onClick={toggleSidebar}></MobileContainer>
             <MainContainer>
-              <MenuIconContainer>
-                <CustomMenuIcon onClick={toggleSidebar} />
-              </MenuIconContainer>
+              <TabContainer>
+                <MenuIconContainer>
+                  <CustomMenuIcon onClick={toggleSidebar} />
+                </MenuIconContainer>
+                <DropdownMenu />
+              </TabContainer>
               <Dashboard />
             </MainContainer>
           </>
         ) : (
           <MainContainer close>
-            <MenuIconContainer>
-              <CustomMenuIcon onClick={toggleSidebar} />
-            </MenuIconContainer>
+            <TabContainer>
+              <MenuIconContainer>
+                <CustomMenuIcon onClick={toggleSidebar} />
+              </MenuIconContainer>
+              <DropdownMenu />
+            </TabContainer>
             <Dashboard />
           </MainContainer>
         )}

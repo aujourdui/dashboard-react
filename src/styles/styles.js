@@ -33,6 +33,17 @@ export const MainContainer = styled.div`
   }
 `;
 
+export const TabContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  margin: 1rem;
+  padding: 1rem;
+`;
+
 export const MenuIconContainer = styled.div`
   background-color: white;
   border-radius: 0.25rem;
@@ -60,4 +71,22 @@ export const CustomMenuIcon = styled(MenuIcon)`
   color: #4b5563;
   cursor: pointer;
   transition: 0.4s ease-in;
+`;
+
+export const AvatarImage = styled.img`
+  border-radius: 9999px;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+`;
+
+export const LogoContainerWrapper = styled.div`
+  padding: 1rem;
+`;
+
+export const LogoContainer = styled.div`
+  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: rgb(37 99 235);
 `;
