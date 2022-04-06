@@ -90,3 +90,27 @@ export const LogoContainer = styled.div`
   line-height: 1.75rem;
   color: rgb(37 99 235);
 `;
+
+export const UlSidebar = styled.ul`
+  color: rgb(55 65 81);
+  padding: 0;
+`;
+export const ListSidebar = styled.li`
+  margin-bottom: 0.25rem;
+  list-style: none;
+`;
+export const LinkItem = styled.a`
+  display: block;
+  padding: 0.5rem;
+  border-radius: 0.125rem;
+  &:hover {
+    color: white;
+    background-color: rgb(96 165 250);
+  }
+`;
+
+export const SidebarListContainer = styled.div`
+  margin-top: 2rem;
+`;
+
+// export const ItemName = styled.span``;
