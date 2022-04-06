@@ -9,13 +9,13 @@ import {
   MenuIconContainer,
   MobileContainer,
   CustomMenuIcon,
-} from "./styles/styles";
+} from "../styles/styles";
 
-import Dashboard from "./components/Dashboard";
-import DropdownMenu from "./components/DropdownMenu";
-import Sidebar from "./components/Sidebar";
+import TaskList from "../components/TaskList";
+import DropdownMenu from "../components/DropdownMenu";
+import Sidebar from "../components/Sidebar";
 
-const App = () => {
+const TaskListPage = () => {
   const [show, setShow] = useState(window.innerWidth >= 1280 ? true : false);
 
   const toggleSidebar = () => {
@@ -40,7 +40,7 @@ const App = () => {
                 </MenuIconContainer>
                 <DropdownMenu />
               </TabContainer>
-              <Dashboard />
+              <TaskList />
             </MainContainer>
           </>
         ) : (
@@ -51,7 +51,7 @@ const App = () => {
               </MenuIconContainer>
               <DropdownMenu />
             </TabContainer>
-            <Dashboard />
+            <TaskList />
           </MainContainer>
         )}
       </RelativeContainer>
@@ -59,4 +59,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default TaskListPage;

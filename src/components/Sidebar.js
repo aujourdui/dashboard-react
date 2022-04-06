@@ -1,19 +1,19 @@
 import React from "react";
 import {
-  LogoContainer,
-  LogoContainerWrapper,
+  LogoLink,
+  LogoLinkWrapper,
   SidebarListContainer,
 } from "../styles/styles";
 import List from "./List";
 
 const Sidebar = () => {
   return (
-    <LogoContainerWrapper>
-      <LogoContainer>Dashboard app</LogoContainer>
+    <LogoLinkWrapper>
+      <LogoLink to="/">Dashboard app</LogoLink>
       <SidebarListContainer>
         <List />
       </SidebarListContainer>
-    </LogoContainerWrapper>
+    </LogoLinkWrapper>
   );
 };
 
