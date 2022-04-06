@@ -9,13 +9,13 @@ import {
   MenuIconContainer,
   MobileContainer,
   CustomMenuIcon,
-} from "./styles/styles";
+} from "../styles/styles";
 
-import Dashboard from "./components/Dashboard";
-import DropdownMenu from "./components/DropdownMenu";
-import Sidebar from "./components/Sidebar";
+import Dashboard from "../components/Dashboard";
+import DropdownMenu from "../components/DropdownMenu";
+import Sidebar from "../components/Sidebar";
 
-const App = () => {
+const DashboardPage = () => {
   const [show, setShow] = useState(window.innerWidth >= 1280 ? true : false);
 
   const toggleSidebar = () => {
@@ -59,4 +59,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default DashboardPage;

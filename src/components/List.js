@@ -7,12 +7,12 @@ const List = () => {
     {
       name: "User list",
       icon: "UserIcon",
-      link: "/",
+      link: "/user",
     },
     {
       name: "Task list",
       icon: "TaskIcon",
-      link: "/#",
+      link: "/task",
       // sublists: [
       //   {
       //     name: "UserList",
@@ -29,7 +29,7 @@ const List = () => {
     <UlSidebar>
       {lists.map((item) => (
         <ListSidebar>
-          <LinkItem>
+          <LinkItem href={item.link}>
             <span>{item.name}</span>
           </LinkItem>
         </ListSidebar>
