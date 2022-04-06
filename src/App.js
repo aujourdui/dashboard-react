@@ -1,19 +1,22 @@
 import { useState } from "react";
-import { CSSTransition } from "react-transition-group";
+// import { CSSTransition } from "react-transition-group";
 
 import {
   RelativeContainer,
   SidebarContainer,
   MainContainer,
+  TabContainer,
   MenuIconContainer,
   MobileContainer,
   CustomMenuIcon,
 } from "./styles/styles";
 
 import Dashboard from "./Dashboard";
+import DropdownMenu from "./components/DropdownMenu";
+import Sidebar from "./components/Sidebar";
 
 const App = () => {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(window.innerWidth >= 1280 ? true : false);
 
   const toggleSidebar = () => {
     setShow(!show);
@@ -22,31 +25,32 @@ const App = () => {
   return (
     <>
       <RelativeContainer>
-        <CSSTransition
-          in={show}
-          timeout={200}
-          classNames={"fade"}
-          unmountOnExit
-        >
+        {show && (
           <SidebarContainer>
-            <p>Sidebar</p>
+            <Sidebar />
           </SidebarContainer>
-        </CSSTransition>
+        )}
         {show ? (
           <>
             <MobileContainer onClick={toggleSidebar}></MobileContainer>
             <MainContainer>
-              <MenuIconContainer>
-                <CustomMenuIcon onClick={toggleSidebar} />
-              </MenuIconContainer>
+              <TabContainer>
+                <MenuIconContainer>
+                  <CustomMenuIcon onClick={toggleSidebar} />
+                </MenuIconContainer>
+                <DropdownMenu />
+              </TabContainer>
               <Dashboard />
             </MainContainer>
           </>
         ) : (
           <MainContainer close>
-            <MenuIconContainer>
-              <CustomMenuIcon onClick={toggleSidebar} />
-            </MenuIconContainer>
+            <TabContainer>
+              <MenuIconContainer>
+                <CustomMenuIcon onClick={toggleSidebar} />
+              </MenuIconContainer>
+              <DropdownMenu />
+            </TabContainer>
             <Dashboard />
           </MainContainer>
         )}

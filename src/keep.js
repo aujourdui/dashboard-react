@@ -8,20 +8,16 @@
 //   return (
 //     <>
 //       <RelativeContainer>
-//         {show && (
-//           <div>
-//             <CSSTransition
-//               in={show}
-//               timeout={200}
-//               classNames={"fade"}
-//               unmountOnExit
-//             >
-//               <SidebarContainer>
-//                 <p>Sidebar</p>
-//               </SidebarContainer>
-//             </CSSTransition>
-//           </div>
-//         )}
+//         <CSSTransition
+//           in={show}
+//           timeout={200}
+//           classNames={"fade"}
+//           unmountOnExit
+//         >
+//           <SidebarContainer>
+//             <p>Sidebar</p>
+//           </SidebarContainer>
+//         </CSSTransition>
 //         {show ? (
 //           <>
 //             <MobileContainer onClick={toggleSidebar}></MobileContainer>
@@ -44,3 +40,5 @@
 //     </>
 //   );
 // };
+
+// export default App;
