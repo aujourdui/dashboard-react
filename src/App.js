@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CSSTransition } from "react-transition-group";
+// import { CSSTransition } from "react-transition-group";
 
 import {
   RelativeContainer,
@@ -13,7 +13,7 @@ import {
 import Dashboard from "./Dashboard";
 
 const App = () => {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(window.innerWidth >= 1280 ? true : false);
 
   const toggleSidebar = () => {
     setShow(!show);
@@ -22,16 +22,11 @@ const App = () => {
   return (
     <>
       <RelativeContainer>
-        <CSSTransition
-          in={show}
-          timeout={200}
-          classNames={"fade"}
-          unmountOnExit
-        >
+        {show && (
           <SidebarContainer>
             <p>Sidebar</p>
           </SidebarContainer>
-        </CSSTransition>
+        )}
         {show ? (
           <>
             <MobileContainer onClick={toggleSidebar}></MobileContainer>
