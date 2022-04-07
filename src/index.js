@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import DashboardPage from "./pages/DashboardPage";
 import TaskListPage from "./pages/TaskListPage";
-import UserListPage from "./pages/UserListPage";
+import MemberListPage from "./pages/MemberListPage";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -16,7 +16,7 @@ root.render(
     <Routes>
       {/* <Route path="/" element={<App />}> */}
       <Route path="/" element={<DashboardPage />} />
-      <Route path="/user" element={<UserListPage />} />
+      <Route path="/member" element={<MemberListPage />} />
       <Route path="/task" element={<TaskListPage />} />
 
       {/* </Route> */}

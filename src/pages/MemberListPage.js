@@ -11,11 +11,11 @@ import {
   CustomMenuIcon,
 } from "../styles/styles";
 
-import UserList from "../components/UserList";
+import MemberList from "../components/MemberList";
 import DropdownMenu from "../components/DropdownMenu";
 import Sidebar from "../components/Sidebar";
 
-const TaskListPage = () => {
+const MemberListPage = () => {
   const [show, setShow] = useState(window.innerWidth >= 1280 ? true : false);
 
   const toggleSidebar = () => {
@@ -40,7 +40,7 @@ const TaskListPage = () => {
                 </MenuIconContainer>
                 <DropdownMenu />
               </TabContainer>
-              <UserList />
+              <MemberList />
             </MainContainer>
           </>
         ) : (
@@ -51,7 +51,7 @@ const TaskListPage = () => {
               </MenuIconContainer>
               <DropdownMenu />
             </TabContainer>
-            <UserList />
+            <MemberList />
           </MainContainer>
         )}
       </RelativeContainer>
@@ -59,4 +59,4 @@ const TaskListPage = () => {
   );
 };
 
-export default TaskListPage;
+export default MemberListPage;
