@@ -28,7 +28,7 @@ const List = () => {
   return (
     <UlSidebar>
       {lists.map((item) => (
-        <ListSidebar>
+        <ListSidebar key={item.name}>
           <LinkItem to={item.link}>
             <span>{item.name}</span>
           </LinkItem>

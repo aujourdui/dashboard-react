@@ -123,13 +123,14 @@ export const MainContentsContainer = styled.div`
 
 export const MemberCardContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
 `;
 
 export const MemberCard = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 5%;
+  margin: 4%;
   padding: 5%;
   color: white;
   background-color: rgb(37 99 235);
@@ -152,6 +153,47 @@ export const MemberCardAvatarImage = styled.img`
   width: 2.5rem;
   height: 2.5rem;
   padding-right: 0.2rem;
+`;
+
+export const TaskAvatarContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+export const TaskAvatarImage = styled.img`
+  border-radius: 9999px;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding-right: 0.2rem;
+`;
+
+export const TaskContainer = styled.div`
+  display: flex;
+  margin-top: 2rem;
+`;
+
+export const TaskContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-right: 40%;
+`;
+
+export const TaskContent = styled.div`
+  display: flex;
+  margin-bottom: 1rem;
+`;
+
+export const TaskItem = styled.div`
+  display: flex;
+  padding: 0.4rem 0;
+`;
+
+export const TaskAssignee = styled.div`
+  display: flex;
+  padding: 0.3rem 0;
+`;
+
+export const TaskSection = styled.div`
+  margin: 0 2rem 1rem;
 `;
 
 // export const ItemName = styled.span``;
