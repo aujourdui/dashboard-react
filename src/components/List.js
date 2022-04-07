@@ -5,9 +5,9 @@ import { UlSidebar, ListSidebar, LinkItem } from "../styles/styles";
 const List = () => {
   const lists = [
     {
-      name: "User list",
-      icon: "UserIcon",
-      link: "/user",
+      name: "Member list",
+      icon: "MemberIcon",
+      link: "/member",
     },
     {
       name: "Task list",
