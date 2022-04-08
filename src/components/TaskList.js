@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+
 import {
   MainContentsContainer,
   TaskContainer,
@@ -12,39 +14,54 @@ import {
 } from "../styles/styles";
 
 const TaskList = () => {
+  const [task, setTask] = useState([]);
+
+  useEffect(() => {
+    const fetchTasks = () => {
+      axios
+        .get("https://jsonblob.com/api/961749831278411776")
+        .then((res) => {
+          setTask(res.data);
+          console.log(task);
+        })
+        .catch((error) => console.error(`Error: ${error}`));
+    };
+    fetchTasks();
+  }, []);
+
   return (
     <MainContentsContainer>
       TaskList
       <TaskContainer>
         <TaskContentContainer>
           <TaskContent>Content</TaskContent>
-          <TaskItem>Finish mid-term project</TaskItem>
-          <TaskItem>Study in the central library for 8hours</TaskItem>
+          <TaskItem>{task[0].task}</TaskItem>
+          <TaskItem>{task[1].task}</TaskItem>
         </TaskContentContainer>
         <TaskSection>
           <TaskContent>Assignee</TaskContent>
           <TaskAssignee>
             <TaskAvatarContainer>
-              <TaskAvatarImage src="/hero-image.jpeg"></TaskAvatarImage>
-              Kyosuke{" "}
+              <TaskAvatarImage src={task[0].image}></TaskAvatarImage>
+              {task[0].name}
             </TaskAvatarContainer>
           </TaskAssignee>
           <TaskAssignee>
             <TaskAvatarContainer>
-              <TaskAvatarImage src="https://media-exp1.licdn.com/dms/image/D5635AQFxVf3purrRog/profile-framedphoto-shrink_200_200/0/1649122686962?e=1649444400&v=beta&t=sfF1kIOjR4gafv0m0-SPnPoLVtnrSYX8bqJBnbsNWwE"></TaskAvatarImage>
-              Sho{" "}
+              <TaskAvatarImage src={task[1].image}></TaskAvatarImage>
+              {task[1].name}
             </TaskAvatarContainer>
           </TaskAssignee>
         </TaskSection>
         <TaskSection>
           <TaskContent>Due</TaskContent>
-          <TaskItem>Today</TaskItem>
-          <TaskItem>Every day</TaskItem>
+          <TaskItem>{task[0].due}</TaskItem>
+          <TaskItem>{task[1].due}</TaskItem>
         </TaskSection>
         <TaskSection>
           <TaskContent>Priority</TaskContent>
-          <TaskItem>High</TaskItem>
-          <TaskItem>High</TaskItem>
+          <TaskItem>{task[0].priority}</TaskItem>
+          <TaskItem>{task[1].priority}</TaskItem>
         </TaskSection>
       </TaskContainer>
     </MainContentsContainer>

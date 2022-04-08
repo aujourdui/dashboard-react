@@ -14,12 +14,15 @@ const MemberList = () => {
   const [member, setMember] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("https://jsonblob.com/api/961737343807799296")
-      .then((res) => {
-        setMember(res.data);
-      })
-      .catch((error) => console.error(`Error: ${error}`));
+    const fetchMember = () => {
+      axios
+        .get("https://jsonblob.com/api/961737343807799296")
+        .then((res) => {
+          setMember(res.data);
+        })
+        .catch((error) => console.error(`Error: ${error}`));
+    };
+    fetchMember();
   }, []);
 
   return (
