@@ -20,20 +20,12 @@ const MemberList = () => {
       try {
         const { data } = await api.fetchMembers();
         setMember(data);
-        console.log(member);
       } catch (error) {
         console.log(error);
       }
     };
     getMember();
   }, []);
-  //   axios
-  //   .get("https://jsonblob.com/api/961737343807799296")
-  //   .then((res) => {
-  //     setMember(res.data);
-  //   })
-  //   .catch((error) => console.error(`Error: ${error}`));
-  // };
 
   return (
     <MainContentsContainer>

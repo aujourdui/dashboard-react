@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 
 import {
   MainContentsContainer,
@@ -13,8 +12,22 @@ import {
   TaskAvatarContainer,
 } from "../styles/styles";
 
+import * as api from "../api/index";
+
 const TaskList = () => {
   const [task, setTask] = useState([]);
+
+  useEffect(() => {
+    const getTask = async () => {
+      try {
+        const { data } = await api.fetchTasks();
+        setTask(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getTask();
+  }, []);
 
   // useEffect(() => {
   //   const fetchTasks = () => {
@@ -32,7 +45,21 @@ const TaskList = () => {
   return (
     <MainContentsContainer>
       TaskList
-      {/* <TaskContainer>
+      <TaskContainer>
+        {task.map((task) => (
+          <TaskContentContainer key={task.id}>
+            <TaskSection>
+              <TaskAvatarContainer>
+                <TaskAvatarImage
+                  src={task.image}
+                  alt="avatar"
+                ></TaskAvatarImage>
+                {task.assignee}
+              </TaskAvatarContainer>
+            </TaskSection>
+            <div>{task.due}</div>
+          </TaskContentContainer>
+        ))}
         <TaskContentContainer>
           <TaskContent>Content</TaskContent>
           <TaskItem>{task[0].task}</TaskItem>
@@ -63,7 +90,7 @@ const TaskList = () => {
           <TaskItem>{task[0].priority}</TaskItem>
           <TaskItem>{task[1].priority}</TaskItem>
         </TaskSection>
-      </TaskContainer> */}
+      </TaskContainer>
     </MainContentsContainer>
   );
 };
