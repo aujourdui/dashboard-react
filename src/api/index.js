@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const member = "http://localhost:5000/member";
+const members = "http://localhost:5000/members/";
 
-export const fetchMember = async () => {
-  const result = await axios.get(member);
+export const fetchMembers = async () => {
+  const result = await axios.get(members);
   return result;
 };
