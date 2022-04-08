@@ -18,8 +18,9 @@ const MemberList = () => {
   useEffect(() => {
     const getMember = async () => {
       try {
-        const { data } = await api.fetchMember();
+        const { data } = await api.fetchMembers();
         setMember(data);
+        console.log(member);
       } catch (error) {
         console.log(error);
       }

@@ -16,23 +16,23 @@ import {
 const TaskList = () => {
   const [task, setTask] = useState([]);
 
-  useEffect(() => {
-    const fetchTasks = () => {
-      axios
-        .get("https://jsonblob.com/api/961749831278411776")
-        .then((res) => {
-          setTask(res.data);
-          console.log(task);
-        })
-        .catch((error) => console.error(`Error: ${error}`));
-    };
-    fetchTasks();
-  }, []);
+  // useEffect(() => {
+  //   const fetchTasks = () => {
+  //     axios
+  //       .get("https://jsonblob.com/api/961749831278411776")
+  //       .then((res) => {
+  //         setTask(res.data);
+  //         console.log(task);
+  //       })
+  //       .catch((error) => console.error(`Error: ${error}`));
+  //   };
+  //   fetchTasks();
+  // }, []);
 
   return (
     <MainContentsContainer>
       TaskList
-      <TaskContainer>
+      {/* <TaskContainer>
         <TaskContentContainer>
           <TaskContent>Content</TaskContent>
           <TaskItem>{task[0].task}</TaskItem>
@@ -63,7 +63,7 @@ const TaskList = () => {
           <TaskItem>{task[0].priority}</TaskItem>
           <TaskItem>{task[1].priority}</TaskItem>
         </TaskSection>
-      </TaskContainer>
+      </TaskContainer> */}
     </MainContentsContainer>
   );
 };
