@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+// import axios from "axios";
 
 import {
   MainContentsContainer,
@@ -10,20 +10,29 @@ import {
   MemberCardAvatarImage,
 } from "../styles/styles";
 
+import * as api from "../api/index";
+
 const MemberList = () => {
   const [member, setMember] = useState([]);
 
   useEffect(() => {
-    const fetchMember = () => {
-      axios
-        .get("https://jsonblob.com/api/961737343807799296")
-        .then((res) => {
-          setMember(res.data);
-        })
-        .catch((error) => console.error(`Error: ${error}`));
+    const getMember = async () => {
+      try {
+        const { data } = await api.fetchMember();
+        setMember(data);
+      } catch (error) {
+        console.log(error);
+      }
     };
-    fetchMember();
+    getMember();
   }, []);
+  //   axios
+  //   .get("https://jsonblob.com/api/961737343807799296")
+  //   .then((res) => {
+  //     setMember(res.data);
+  //   })
+  //   .catch((error) => console.error(`Error: ${error}`));
+  // };
 
   return (
     <MainContentsContainer>
