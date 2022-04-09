@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 // import axios from "axios";
 
 import {
-  MainContentsContainer,
   MemberCardContainer,
   MemberCard,
   MemberCardContent,
@@ -28,24 +27,22 @@ const MemberList = () => {
   }, []);
 
   return (
-    <MainContentsContainer>
-      <MemberCardContainer>
-        {member.map((member) => (
-          <MemberCard key={member.id}>
-            <MemberCardContent>
-              <MemberCardAvatarContainer>
-                <MemberCardAvatarImage
-                  src={member.image}
-                  alt="avatar"
-                ></MemberCardAvatarImage>
-                {member.name}
-              </MemberCardAvatarContainer>
-            </MemberCardContent>
-            <MemberCardContent>{member.position}</MemberCardContent>
-          </MemberCard>
-        ))}
-      </MemberCardContainer>
-    </MainContentsContainer>
+    <MemberCardContainer>
+      {member.map((member) => (
+        <MemberCard key={member.id}>
+          <MemberCardContent>
+            <MemberCardAvatarContainer>
+              <MemberCardAvatarImage
+                src={member.image}
+                alt="avatar"
+              ></MemberCardAvatarImage>
+              {member.name}
+            </MemberCardAvatarContainer>
+          </MemberCardContent>
+          <MemberCardContent>{member.position}</MemberCardContent>
+        </MemberCard>
+      ))}
+    </MemberCardContainer>
   );
 };
 
