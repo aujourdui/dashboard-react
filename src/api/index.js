@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const members = "http://localhost:5000/members/";
-const tasks = "http://localhost:5000/tasks/";
+const members = "https://dashboard-react-backend742964.herokuapp.com/members/";
+const tasks = "https://dashboard-react-backend742964.herokuapp.com/tasks/";
 
 export const fetchMembers = async () => {
   const result = await axios.get(members);
