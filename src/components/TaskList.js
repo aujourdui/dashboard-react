@@ -5,7 +5,7 @@ import {
   TaskItem,
   TaskAvatarImage,
   TaskAvatarContainer,
-} from "../styles/styles";
+} from "../styles/task";
 
 import * as api from "../api/index";
 
@@ -23,19 +23,6 @@ const TaskList = () => {
     };
     getTask();
   }, []);
-
-  // useEffect(() => {
-  //   const fetchTasks = () => {
-  //     axios
-  //       .get("https://jsonblob.com/api/961749831278411776")
-  //       .then((res) => {
-  //         setTask(res.data);
-  //         console.log(task);
-  //       })
-  //       .catch((error) => console.error(`Error: ${error}`));
-  //   };
-  //   fetchTasks();
-  // }, []);
 
   return (
     <TaskContainer>
