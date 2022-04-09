@@ -167,14 +167,82 @@ export const TaskAvatarImage = styled.img`
 `;
 
 export const TaskContainer = styled.div`
-  display: flex;
-  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  margin: 2rem 0 1rem 0;
+`;
+
+export const TaskItemContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  margin-top: 0.5rem;
 `;
 
 export const TaskContentContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding-right: 40%;
+  grid-column-start: 1;
+  grid-column-end: 7;
+  grid-row-start: 1;
+  grid-row-end: 2;
+`;
+
+export const TaskItem = styled.div`
+  grid-column-start: 1;
+  grid-column-end: 7;
+  margin-top: 1rem;
+  ${"" /* grid-column-start: 1; */}
+`;
+
+export const TaskAssignee = styled.div`
+  grid-column-start: 7;
+  grid-column-end: 8;
+  grid-row-start: 1;
+  grid-row-end: 2;
+`;
+export const TaskDue = styled.div`
+  grid-column-start: 8;
+  grid-column-end: 9;
+  grid-row-start: 1;
+  grid-row-end: 2;
+`;
+export const TaskPriority = styled.div`
+  grid-column-start: 9;
+  grid-column-end: 10;
+  grid-row-start: 1;
+  grid-row-end: 2;
+`;
+
+export const TaskItemAssignee = styled.div`
+  grid-column-start: 7;
+  grid-column-end: 8;
+  margin-top: 1rem;
+  ${
+    "" /* grid-row-start: 1;
+  grid-row-end: 2; */
+  }
+`;
+export const TaskItemDue = styled.div`
+  grid-column-start: 8;
+  grid-column-end: 9;
+  margin-top: 1rem;
+  ${
+    "" /* grid-row-start: 1;
+  grid-row-end: 2; */
+  }
+`;
+export const TaskItemPriority = styled.div`
+  grid-column-start: 9;
+  grid-column-end: 10;
+  margin-top: 1rem;
+  ${
+    "" /* grid-row-start: 1;
+  grid-row-end: 2; */
+  }
+`;
+
+export const TaskSection = styled.div`
+  ${"" /* margin: 0 2rem 1rem; */}
 `;
 
 export const TaskContent = styled.div`
@@ -182,18 +250,14 @@ export const TaskContent = styled.div`
   margin-bottom: 1rem;
 `;
 
-export const TaskItem = styled.div`
-  display: flex;
-  padding: 0.4rem 0;
-`;
+// export const TaskItem = styled.div`
+//   display: flex;
+//   margin: 0 2rem 0.5rem;
+// `;
 
-export const TaskAssignee = styled.div`
-  display: flex;
-  padding: 0.3rem 0;
-`;
-
-export const TaskSection = styled.div`
-  margin: 0 2rem 1rem;
-`;
+// export const TaskAssignee = styled.div`
+//   display: flex;
+//   padding: 0.3rem 0;
+// `;
 
 // export const ItemName = styled.span``;
