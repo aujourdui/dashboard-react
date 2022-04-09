@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import axios from "axios";
 
 import {
   MemberCardContainer,
@@ -7,7 +6,7 @@ import {
   MemberCardContent,
   MemberCardAvatarContainer,
   MemberCardAvatarImage,
-} from "../styles/styles";
+} from "../styles/member";
 
 import * as api from "../api/index";
 

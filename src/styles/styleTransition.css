@@ -1,17 +1,34 @@
 .fade-enter {
-  opacity: 0;
+  /* opacity: 0; */
+  width: 0;
 }
 
 .fade-enter-active {
-  opacity: 1;
-  transition: opacity 400ms;
+  /* opacity: 1; */
+  width: 16rem;
+  transition: width 400ms;
 }
 
 .fade-exit {
-  opacity: 1;
+  /* opacity: 1; */
+  width: 16rem;
 }
 
 .fade-exit-active {
-  opacity: 0;
-  transition: opacity 400ms;
+  /* opacity: 0; */
+  width: 0;
+  transition: width 400ms;
+}
+
+.sidebar {
+  width: 16rem;
+  background-color: #f3f4f6;
+  padding: 20px;
+  color: white;
+  transition: 0.4s ease-in;
+}
+
+.sidebar-closed {
+  padding: 0;
+  width: 0;
 }
