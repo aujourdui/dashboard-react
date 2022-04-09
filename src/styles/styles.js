@@ -170,7 +170,7 @@ export const TaskContainer = styled.div`
   display: grid;
   grid-template-columns: 5fr repeat(3, 1fr);
   grid-template-rows: 2fr repeat(2, 1fr);
-  margin-top: 2rem;
+  margin: 2rem 0 0 2rem;
 `;
 
 export const TaskItem = styled.div`

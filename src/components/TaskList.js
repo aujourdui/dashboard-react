@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 import {
-  MainContentsContainer,
   TaskContainer,
   TaskItem,
   TaskAvatarImage,
@@ -39,33 +38,36 @@ const TaskList = () => {
   // }, []);
 
   return (
-    <MainContentsContainer>
-      TaskList
-      <TaskContainer>
-        <div>Content</div>
-        <div>Assignee</div>
-        <div>Due</div>
-        <div>Priority</div>
-        <TaskItem>Finish the mid-term project</TaskItem>
-        <TaskItem>
-          <TaskAvatarContainer>
-            <TaskAvatarImage src="/hero-image.jpeg" />
-            Kyosuke
-          </TaskAvatarContainer>
-        </TaskItem>
-        <TaskItem>Today</TaskItem>
-        <TaskItem>High</TaskItem>
-        <TaskItem>Study in the central library for 8hours</TaskItem>
-        <TaskItem>
-          <TaskAvatarContainer>
-            <TaskAvatarImage src="https://media-exp1.licdn.com/dms/image/D5635AQFxVf3purrRog/profile-framedphoto-shrink_200_200/0/1649122686962?e=1649444400&v=beta&t=sfF1kIOjR4gafv0m0-SPnPoLVtnrSYX8bqJBnbsNWwE" />
-            Sho
-          </TaskAvatarContainer>
-        </TaskItem>
-        <TaskItem>Every day</TaskItem>
-        <TaskItem>High</TaskItem>
-      </TaskContainer>
-    </MainContentsContainer>
+    <TaskContainer>
+      <div>Content</div>
+      <div>Assignee</div>
+      <div>Due</div>
+      <div>Priority</div>
+
+      {task.map((task) => (
+        <>
+          <TaskItem>{task.task}</TaskItem>
+          <TaskItem>
+            <TaskAvatarContainer>
+              <TaskAvatarImage src={task.image} />
+              {task.assignee}
+            </TaskAvatarContainer>
+          </TaskItem>
+          <TaskItem>{task.due}</TaskItem>
+          <TaskItem>{task.priority}</TaskItem>
+        </>
+      ))}
+
+      {/* <TaskItem>Study in the central library for 8hours</TaskItem>
+      <TaskItem>
+        <TaskAvatarContainer>
+          <TaskAvatarImage src="https://media-exp1.licdn.com/dms/image/D5635AQFxVf3purrRog/profile-framedphoto-shrink_200_200/0/1649122686962?e=1649444400&v=beta&t=sfF1kIOjR4gafv0m0-SPnPoLVtnrSYX8bqJBnbsNWwE" />
+          Sho
+        </TaskAvatarContainer>
+      </TaskItem>
+      <TaskItem>Every day</TaskItem>
+      <TaskItem>High</TaskItem> */}
+    </TaskContainer>
   );
 };
 
