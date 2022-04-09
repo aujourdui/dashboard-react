@@ -124,6 +124,9 @@ export const MainContentsContainer = styled.div`
 export const MemberCardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
+  @media (max-width: 48rem) {
+    display: block;
+  }
 `;
 
 export const MemberCard = styled.div`
@@ -171,8 +174,14 @@ export const TaskContainer = styled.div`
   grid-template-columns: 5fr repeat(3, 1fr);
   grid-template-rows: 2fr repeat(2, 1fr);
   margin: 2rem 0 0 2rem;
+  @media (max-width: 48rem) {
+    margin: 2rem 0 0 0.5rem;
+  }
 `;
 
 export const TaskItem = styled.div`
   margin-bottom: 0.5rem;
+  @media (max-width: 48rem) {
+    font-size: 0.8rem;
+  }
 `;

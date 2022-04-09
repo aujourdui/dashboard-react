@@ -45,7 +45,7 @@ const TaskList = () => {
       <div>Priority</div>
 
       {task.map((task) => (
-        <>
+        <React.Fragment key={task.id}>
           <TaskItem>{task.task}</TaskItem>
           <TaskItem>
             <TaskAvatarContainer>
@@ -55,18 +55,8 @@ const TaskList = () => {
           </TaskItem>
           <TaskItem>{task.due}</TaskItem>
           <TaskItem>{task.priority}</TaskItem>
-        </>
+        </React.Fragment>
       ))}
-
-      {/* <TaskItem>Study in the central library for 8hours</TaskItem>
-      <TaskItem>
-        <TaskAvatarContainer>
-          <TaskAvatarImage src="https://media-exp1.licdn.com/dms/image/D5635AQFxVf3purrRog/profile-framedphoto-shrink_200_200/0/1649122686962?e=1649444400&v=beta&t=sfF1kIOjR4gafv0m0-SPnPoLVtnrSYX8bqJBnbsNWwE" />
-          Sho
-        </TaskAvatarContainer>
-      </TaskItem>
-      <TaskItem>Every day</TaskItem>
-      <TaskItem>High</TaskItem> */}
     </TaskContainer>
   );
 };
