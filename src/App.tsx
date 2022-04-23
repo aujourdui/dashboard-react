@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Outlet } from "react-router-dom";
 // import { CSSTransition } from "react-transition-group";
 
 import {
@@ -40,7 +41,7 @@ const App = () => {
                 </MenuIconContainer>
                 <DropdownMenu />
               </TabContainer>
-              <Dashboard />
+              <Outlet />
             </MainContainer>
           </>
         ) : (
@@ -51,7 +52,8 @@ const App = () => {
               </MenuIconContainer>
               <DropdownMenu />
             </TabContainer>
-            <Dashboard />
+            <Outlet />
+            {/* <Dashboard /> */}
           </MainContainer>
         )}
       </RelativeContainer>
