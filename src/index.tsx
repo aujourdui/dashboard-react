@@ -1,9 +1,13 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import DashboardPage from "./pages/DashboardPage";
-import TaskListPage from "./pages/TaskListPage";
-import MemberListPage from "./pages/MemberListPage";
+// import DashboardPage from "./pages/DashboardPage";
+// import TaskListPage from "./pages/TaskListPage";
+// import MemberListPage from "./pages/MemberListPage";
+import Dashboard from "./components/Dashboard";
+import MemberList from "./components/MemberList";
+import TaskList from "./components/TaskList";
+import App from "./App";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const container = document.getElementById("root");
@@ -12,12 +16,11 @@ const root = createRoot(container);
 root.render(
   <BrowserRouter>
     <Routes>
-      {/* <Route path="/" element={<App />}> */}
-      <Route path="/" element={<DashboardPage />} />
-      <Route path="/member" element={<MemberListPage />} />
-      <Route path="/task" element={<TaskListPage />} />
-
-      {/* </Route> */}
+      <Route path="/" element={<App />}>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/member" element={<MemberList />} />
+        <Route path="/task" element={<TaskList />} />
+      </Route>
     </Routes>
   </BrowserRouter>
 );
